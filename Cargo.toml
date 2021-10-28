@@ -1,15 +1,15 @@
 [package]
-name = "wral"
-version = "0.2.0"
-description = "Write ahead logging for durability"
-repository = "https://github.com/bnclabs/wral"
-documentation = "https://docs.rs/wral/"
-keywords = ["wal", "db", "database"]
-categories = ["concurrency", "database", "filesystem"]
 authors = ["prataprc <prataprc@gmail.com>"]
-license = "MIT"
+categories = ["concurrency", "database", "filesystem"]
+description = "Write ahead logging for durability"
+documentation = "https://docs.rs/wral/"
 edition = "2018"
+keywords = ["wal", "db", "database"]
+license = "MIT"
+name = "wral"
 readme = "README.md"
+repository = "https://github.com/bnclabs/wral"
+version = "0.2.0"
 
 [profile.release]
 debug = true
@@ -22,16 +22,16 @@ name = "perf"
 required-features = ["perf"]
 
 [dependencies]
-mkit = { path = "../mkit", version = "0.4.0" }
-log = "0.4"
 arbitrary = { version = "0.4", features = ["derive"] }
-tempfile = "3"
-
-structopt = { version = "0.3.20", default-features = false, optional = true }
+log = "0.4"
+mkit = { git = "https://github.com/Licenser/mkit.git", branch = "tremor-test" }
 rand = { version = "0.7.3", features = ["small_rng"], optional = true }
+structopt = { version = "0.3.20", default-features = false, optional = true }
+tempfile = "3"
+xorfilter-rs = { git = "https://github.com/bnclabs/xorfilter.git" }
 
 [dev-dependencies]
-rand = { version = "0.7.3", features = ["small_rng"]}
+rand = { version = "0.7.3", features = ["small_rng"] }
 
 [features]
 perf = ["structopt", "rand"]
